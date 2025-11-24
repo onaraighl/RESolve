@@ -58,7 +58,7 @@ The function `postprocessTheta.m` takes **inputs**
 *  z        - z-coordinate
 *  theta_tz - spacetime array of values of theta, in units of mm^3/mm^3.
 
-and produces as an **output** a vector `THETA`, which is the storage water level, as a function of time, in units of meters.  The water storage level is typically denoted in the literature by (Θ, big-theta), and is computed from θ via the trapezoidal rule.
+and produces as an **output** a vector `THETA`, which is the storage water level, as a function of time, in units of meters.  The water storage level is typically denoted in the literature by Θ (big-theta), and is computed from θ via the trapezoidal rule.
 
 In addition, `postprocessPlot.m` is a function taking NULL inputs and producing NULL outputs which operates on the aforementioned `data.mat`.  The function loads `data.mat` and calls `postprocessTheta.m`, producing a pre-formatted plot of the storage water level (Θ, big-theta) over time.
 

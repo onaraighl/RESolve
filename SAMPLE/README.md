@@ -38,10 +38,14 @@ Here, the inputs are NULL and the outputs are:
 *  theta_tz - spacetime array of values of theta, in units of mm^3/mm^3.
 *  sol      - matlab output (included here as diagnostic).
 
-Note that **SI units are used throughout**  In `SAMPLE/` it is recommended to save the results as a structure in a `.m` file:
+Note that **SI units are used throughout**.  In `SAMPLE/` it is recommended to save the results as a structure in a `.m` file:
 
 `temp=struct('t',t,'z',z,'h_tz',h_tz,'theta_tz',theta_tz)`
 `save('data.mat','temp')`
+
+Then, some postprocessing steps can be run, using `data.mat' as an input.
+
+# Running the code:
 
 
 

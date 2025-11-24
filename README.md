@@ -9,6 +9,9 @@ Suite of Matlab codes codes to solve the Richards Equation in 1D.
 
 ![Cartoon](cartoon.png)
 
+[![Cartoon](notes_clickable.png)](https://github.com/onaraighl/RESolve/blob/main/notes1.pdf)
+
+
 
 
 

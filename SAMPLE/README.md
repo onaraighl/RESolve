@@ -52,7 +52,7 @@ Two postprocessing functions are currently provided:
 *  `postprocessTheta.m`
 *  `postprocessPlot.m`
 
-The function `postprocessTheta.m' takes **inputs**
+The function `postprocessTheta.m` takes **inputs**
 
 *  t        - vector of time values
 *  z        - z-coordinate

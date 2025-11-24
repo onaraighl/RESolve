@@ -1,12 +1,11 @@
-# EPDIFF
+# RESolve
 
-Suite of codes codes for a solving the EPDiff equation in two spatial dimensions.
+Suite of Matlab codes codes to solve the Richards Equation in 1D.
 
 # Project overview:
 
 * Theory and code analysis is documented in notes1.pdf
-* Simple EPDIFF code (in Matlab) is provided in Simple_EPDIFF/
-* Two-component EPDIFF code (in Matlab) provided in TwoComponent_EPDIFF/
+* Sample code (in Matlab) is provided in SAMPLE/
 
 ![Cartoon](cartoon.png)
 

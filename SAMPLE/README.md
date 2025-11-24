@@ -1,17 +1,16 @@
-# RESolve
+# RESolve/SAMPLE
 
-Suite of Matlab codes codes to solve the Richards Equation in 1D.
+**RESolve** is a suite of Matlab codes to solve the Richards Equation in 1D.  `RESolve/SAMPLE` is a sample implementation equipped with synthetic meteorological inputs.
 
-# Project overview:
+# Code Structure:
 
-* Theory and code analysis is documented in pdf document [notes1](https://github.com/onaraighl/RESolve/blob/main/notes1.pdf)
-* Code allows for various boundary conditions including options for ponding at the top, free drainage at the bottom, and saturation at the bottom.
-* Hydrus convention is adopted, whereby z=0 is the bottom and z=L is the top.  And by "top" I mean the surface, where the soil gets rained on!
-* Sample code with (in Matlab) is provided in SAMPLE/
+The model is written in a single Matlab function richards pdepe.m, which includes a main function setting up the spatial grid, time vector, soil hydraulic functions, rainfall input,
+and calls to pdepe. The main function pdepe.m contains subfunctions:
 
-![Cartoon](cartoon.png)
+* `richards_pde` - a function to define the actual PDE being solved, including definitions of the capacity c, the flux f, and the source s;
+* bc_fun - a function to set up the boundary conditions
+* initial_h - a function to define the initial conditions.
 
-[![Cartoon](notes_clickable.png)](https://github.com/onaraighl/RESolve/blob/main/notes1.pdf)
 
 
 

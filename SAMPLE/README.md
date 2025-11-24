@@ -49,8 +49,8 @@ Then, some postprocessing steps can be run, using `data.mat' as an input.
 
 Two postprocessing functions are currently provided:
 
-*  `postprocessTheta.m'
-*  `postprocessPlot.m'
+*  `postprocessTheta.m`
+*  `postprocessPlot.m`
 
 The function `postprocessTheta.m' takes **inputs**
 

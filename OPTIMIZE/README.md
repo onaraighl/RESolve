@@ -31,6 +31,8 @@ The cost function calls `RESolve`, through the Matlab function `richards_pdepe.m
 
 OPTIMIZE/ is shipped with three .xlsx files.
 
+`data_johnstown.xlsx` is the master spreadsheet, from which the other spreadsheets are derived.  The last tab may be of interest.  In this tab,  SK has inferred the Van Genuchten parameters for the soils at Johnstown Castle using the data in the paper of Diamond and Sills, and ROSETTA. 
+
 `met_data_johnstown.xlsx` contains temperature, rainfall, RH, and EP data from 1995-2002, taken from the Johnstown Castle Weather station.  The temprature, rainfall, and RH data are taken directly from the [Met Éireann website](https://www.met.ie/climate/available-data/historical-data).  Pre-2009 data from Johnstown Castle correspond to Station number 915 (opened 1914, closed 2009).  The EP data are inferred using the Hargreaves-Samani formula.
 
 The met data are loaded into `richards_pdepe.m` using Matlab's `readtable` syntax, e.g.:
@@ -41,7 +43,7 @@ This data is then used to generate the rainfall and evapotranspiration, which fe
 
 `obs_15cm_johnstown.xlsx` contains time series of the soil pressure at Johnstown and other sites, measured using a tensiometer.  These observations have been heroically digized from the paper of Diamond and Sills by SK.   These **observation data** are used in `myOptimizaton.m` to produce the cost function.  Again, the spreadsheet is read into the Matlabl file using the `readtable` syntax. 
 
-`data_johnstown.xlsx` is really the master spreadsheet, from which the first two spreadsheets have been derived.  In fact, the first two spreadsheets are simplified, for importation into the Matlab codes.   This master spreadsheet is also useful because in it, SK has inferred the Van Genuchten parameters for the soils at Johnstown Castle using the data in the paper of Diamond and Sills, and ROSETTA.  These inferred VG parameters can be found in the last tab of the spreadsheet.
+
 
 [![Cartoon](notes_clickable1.png)](https://github.com/onaraighl/RESolve/blob/main/OPTIMIZE/notes2.pdf)
 

@@ -10,6 +10,8 @@ Suite of Matlab codes codes to fit a Richards Equation model to data from Johnst
 
 * ![Cartoon](best_fit_nov28.png)
 
+_Figure shows sample results.  Training on 1999 - 2000 (two years).  Predictions for 2001._
+
 # Detailed code structure:
 
 Optimization procedure is called from function `myOptimization.m`.  Input arguments are null and the output arguments are `p_opt` and `fval`:

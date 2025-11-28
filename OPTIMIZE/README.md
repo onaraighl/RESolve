@@ -6,12 +6,12 @@ Suite of Matlab codes codes to fit a Richards Equation model to data from Johnst
 
 * Data digitized from the paper of [Diamond and Sills](https://t-stor.teagasc.ie/entities/publication/c5d35858-c39a-44c5-84ba-942b8b9f2b3f)
 * Nonlinear least-squres fitting with K_sat and alpha as parameters.
-* Pseudoponding top BC with fixed limiting infiltation flux, 6.9 mm/day.
+* Pseudoponding top BC with fixed limiting infiltation flux.
 * Procedure descriibed in [notes2](https://github.com/onaraighl/RESolve/blob/main/OPTIMIZE/notes2.pdf) (clickable link below).
 
 * ![Cartoon](best_fit_nov28.png)
 
-_Figure shows sample results.  Training on 1999 - 2000 (two years).  Predictions for 2001._
+_Figure shows sample results.  Training on 1999 - 2000 (two years).  Predictions for 2001.  Pseudoponding top BC with fixed limiting flux 6.9 mm/day._
 
 # Detailed code structure:
 

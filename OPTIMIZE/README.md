@@ -4,7 +4,7 @@ Suite of Matlab codes codes to fit a Richards Equation model to data from Johnst
 
 # Project overview:
 
-* Data digigized from the paper of [Diamond and Sills](https://t-stor.teagasc.ie/entities/publication/c5d35858-c39a-44c5-84ba-942b8b9f2b3f)
+* Data digitized from the paper of [Diamond and Sills](https://t-stor.teagasc.ie/entities/publication/c5d35858-c39a-44c5-84ba-942b8b9f2b3f)
 * Nonlinear least-squres fitting with K_sat and alpha as parameters.
 * Procedure descriibed in [notes2](https://github.com/onaraighl/RESolve/blob/main/OPTIMIZE/notes2.pdf).
 

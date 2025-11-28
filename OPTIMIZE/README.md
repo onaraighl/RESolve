@@ -8,6 +8,8 @@ Suite of Matlab codes codes to fit a Richards Equation model to data from Johnst
 * Nonlinear least-squres fitting with K_sat and alpha as parameters.
 * Procedure descriibed in [notes2](https://github.com/onaraighl/RESolve/blob/main/OPTIMIZE/notes2.pdf) (clickable link below).
 
+* ![Cartoon](best_fit_nov28.png)
+
 # Detailed code structure:
 
 Optimization procedure is called from function `myOptimization.m`.  Input arguments are null and the output arguments are `p_opt` and `fval`:

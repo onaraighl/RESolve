@@ -8,6 +8,7 @@ Suite of Matlab codes codes to solve the Richards Equation in 1D.
 * Code allows for various boundary conditions including options for ponding at the top, free drainage at the bottom, and saturation at the bottom.
 * Hydrus convention is adopted, whereby z=0 is the bottom and z=L is the top.  And by "top" I mean the surface, where the soil gets rained on!
 * Sample code with (in Matlab) is provided in `SAMPLE/`
+* Model fitted to data from Johnstown Castle Co. Wexford in `OPTIMIZE/`
 
 ![Cartoon](cartoon.png)
 

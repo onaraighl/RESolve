@@ -98,19 +98,6 @@ t_final =365*3*24*60*60; % final time [s] ... so running simulation for 3 years.
 Nt = 500;                % number of temporal points
 t = linspace(0, t_final, Nt);
 
-% Here, I define a global variable h_near_top.  This is h evaluated at the
-% gridpoint nearest to the surface, but not on the surface.  This shall be
-% a global variable used in the various pde subfunctions.
-
-z_near_top=z(end-1); 
-h0_temp = initial_h(z);
-
-for i=1:length(z)
-    if( abs(z(i)-z_near_top)<1e-8)
-        h_near_top=h0_temp(i);
-    end
-end
-
 disp('done')
 
 % *************************************************************************
@@ -171,17 +158,12 @@ function [c,f,s] = richards_pde(x, t_local, u, ux, params_local)
 
     % th_r = params_local.theta_r; % local value of residual moisture level.
     % th_s = params_local.theta_s; % local value of saturated moisture level.
-    z_local=x; % local value of z (z\equiv x).
+    % z_local=x; % local value of z (z\equiv x).
     h_local = u; % local value of h (\equiv u).
 
-    % Update h_near_top
-    if( (z_local-z_near_top)<1e-8)
-        h_near_top=h_local;
-    end
-
     % Get theta, C, K from VG model.
-    % The first output variable is theta_val.
-    [theta_val, Cval, Kval] = vg_model(h_local, params_local); 
+    % The first output variable would be theta_val.
+    [~, Cval, Kval] = vg_model(h_local, params_local); 
 
     c = Cval;             % capacity
     f = Kval .* (ux + 1); % flux f = K(h)*( (dh/dz) + 1); HYDRUS CONVENTION
@@ -194,31 +176,6 @@ function [c,f,s] = richards_pde(x, t_local, u, ux, params_local)
 
     EP_local=get_EP(t_local,metData); % Obtaining EP coefficeint from data
                                       % (depends on time).
-
-    % To avoid potential blow-up of the PDE, I need the following safety
-    % switch:
-
-    % theta_upr=0.2;
-    % theta_lwr=th_r;
-    % 
-    % if(theta_val>theta_upr)
-    %     safety=1;
-    % elseif(theta_val>theta_lwr)
-    %     X=(theta_val-theta_lwr)/(theta_upr-theta_lwr);
-    %     safety=sin(pi*X/2);
-    %     theta_val
-    %     h_local
-    %     s_prefactor
-    %     f2
-    % else
-    %     safety=0;
-    %     theta_val
-    %     h_local
-    %     s_prefactor
-    %     f2
-    % end
-
-    % safety=(theta_val-th_r)/(th_s-th_r);
 
     s=-EP_local*s_prefactor; 
 
@@ -247,20 +204,12 @@ end
 
 function [pl,ql,pr,qr] = bc_fun(zl, ul, zr, ur, t_cur, params_local,dz_local)
 
-    
-    dhdz_ref=(h_ref-h_near_top)/dz_local;
-    [~,~,K_ref] = vg_model(h_ref, params_local);         
-    q_max = K_ref * (dhdz_ref + 1);
     % Right-hand BC (ur,zr) corresponds to z=L, which is the TOP.
+    % Note!  A pure ponding condition is not possible in pdepe.
+    % Here, we implement the standard top BC.
 
     q_rainfall=get_rainfall(t_cur,metData);
-
-    if(q_rainfall>q_max)
-        qtop=q_max;
-        display(strcat('ponding at day=',num2str(t_cur/(24*3600))))
-    else
-        qtop=q_rainfall;
-    end
+    qtop=q_rainfall;
 
     pr =  - qtop;
     qr = 1;

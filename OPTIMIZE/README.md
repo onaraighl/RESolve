@@ -6,7 +6,7 @@ Suite of Matlab codes codes to fit a Richards Equation model to data from Johnst
 
 * Data digitized from the paper of [Diamond and Sills](https://t-stor.teagasc.ie/entities/publication/c5d35858-c39a-44c5-84ba-942b8b9f2b3f)
 * Nonlinear least-squres fitting with K_sat and alpha as parameters.
-* Procedure descriibed in [notes2](https://github.com/onaraighl/RESolve/blob/main/OPTIMIZE/notes2.pdf).
+* Procedure descriibed in [notes2](https://github.com/onaraighl/RESolve/blob/main/OPTIMIZE/notes2.pdf) (clickable link below).
 
 # Detailed code structure:
 
@@ -35,6 +35,8 @@ OPTIMIZE/ is shipped with two .xlsx files.
 
 
 `obs_15cm_johnstown.xlsx` contains time series of the soil pressure at Johnstown and other sites, measured using a tensiometer.  These observations have been heroically digized from the paper of Diamond and Sills by SK.  SK has also inferred the Van Genuchten parameters for the soils at Johnstown Castle using the data in the paper of Diamond and Sills, and Rosetta.  These inferred VG parameters can be found in the last tab of this spreadsheet.
+
+[![Cartoon](notes_clickable1.png)](https://github.com/onaraighl/RESolve/blob/main/OPTIMIZE/notes2.pdf)
 
 
 

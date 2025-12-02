@@ -9,7 +9,7 @@ Suite of Matlab codes codes to fit a Richards Equation model to data from Johnst
 * Pseudoponding top BC with fixed limiting infiltation flux.
 * Procedure descriibed in [notes2](https://github.com/onaraighl/RESolve/blob/main/OPTIMIZE/notes2.pdf) (clickable link below).
 
-* ![Cartoon](best_fit_dec1st.png)
+* ![Cartoon](best_fit_dec2nd.png)
 
 _Figure shows sample results.  Training on 1999 - 2000 (two years).  Predictions for 2001.  Pseudoponding top BC with fixed limiting flux 6.9 mm/day._
 
